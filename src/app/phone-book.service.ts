@@ -7,7 +7,7 @@ import { Person } from './person';
   providedIn: 'root'
 })
 export class PhoneBookService {
-  url = 'http://localhost:55778/Api/People';
+  url = 'http://localhost:55778//Api/People';
   httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json'}) };
 
   constructor(private http: HttpClient) { }
@@ -16,19 +16,19 @@ export class PhoneBookService {
     return this.http.get<Person[]>(this.url + '/ReadAllPeopleInfo');
   }
 
-  getWorkerById(PersonId: string): Observable<Person> {
+  getPersonById(PersonId: string): Observable<Person> {
     return this.http.get<Person>(this.url + '/ReadPersonById/' + PersonId);
   }
 
-  createWorker(person: Person): Observable<Person> {
+  createPerson(person: Person): Observable<Person> {
     return this.http.post<Person>(this.url + '/CreatePerson/', person, this.httpOptions);
   }
 
-  updateWorker(person: Person): Observable<Person> {
+  updatePerson(person: Person): Observable<Person> {
     return this.http.put<Person>(this.url + '/UpdatePerson/', person, this.httpOptions);
   }
 
-  deleteWorkerById(PersonId: string): Observable<number> {
+  deletePersonById(PersonId: string): Observable<number> {
     return this.http.delete<number>(this.url + '/DeletePersonById/' + PersonId, this.httpOptions);
   }
 }

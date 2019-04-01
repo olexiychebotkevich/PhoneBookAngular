@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Person } from '../person';
 import { PhoneBookService } from '../phone-book.service';
-import { FormBuilder, Validators } from '@angular/forms';
+
 
 @Component({
   selector: 'app-phone-book',
@@ -11,7 +11,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 })
 export class PhoneBookComponent implements OnInit {
   allPeople: Observable<Person[]>;
-  constructor(private formbulider: FormBuilder, private wS: PhoneBookService) { }
+  constructor( private wS: PhoneBookService) { }
 
   ngOnInit() {
     this.loadAllPeople();
@@ -20,6 +20,7 @@ export class PhoneBookComponent implements OnInit {
 
   loadAllPeople() {
     this.allPeople = this.wS.getAllPeople();
+    console.log(this.allPeople);
   }
 
 }

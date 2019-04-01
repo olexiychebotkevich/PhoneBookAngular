@@ -1,3 +1,18 @@
-<p>
-  phone-book works!
-</p>
+<table class="table" mat-table >
+  <tr ngclass="btn-primary">  
+    <th class="tbl2">Worker Name</th>  
+    <th class="tbl2">Worker Surname</th>  
+    <th class="tbl2">Age</th>  
+    <th class="tbl2">Salary</th>  
+    <th class="tbl2">Edit</th>  
+    <th class="tbl2">Delete</th>  
+  </tr>  
+  <tr *ngFor="let w of allPeople | async">  
+    <td class="tbl2">{{w.Name}}</td>   
+    <td class="tbl2">{{w.Surname}}</td>
+    <td class="tbl2">{{w.NickName}}</td>  
+   
+    
+  </tr>  
+
+</table>  
