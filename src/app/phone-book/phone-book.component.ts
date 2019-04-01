@@ -15,12 +15,13 @@ export class PhoneBookComponent implements OnInit {
 
   ngOnInit() {
     this.loadAllPeople();
+    console.log(this.allPeople);
   }
 
 
   loadAllPeople() {
     this.allPeople = this.wS.getAllPeople();
-    console.log(this.allPeople);
+    
   }
 
 }
