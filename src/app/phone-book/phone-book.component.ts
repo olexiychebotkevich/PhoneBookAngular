@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Person } from '../person';
 import { PhoneBookService } from '../phone-book.service';
+import { MatNativeDateModule, MatIconModule, MatCardModule } from '@angular/material';
+import { MatSidenavModule, MatFormFieldModule, MatInputModule } from '@angular/material';
+import { MatTooltipModule, MatToolbarModule } from '@angular/material';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 
 @Component({
@@ -11,7 +15,7 @@ import { PhoneBookService } from '../phone-book.service';
 })
 export class PhoneBookComponent implements OnInit {
   allPeople: Observable<Person[]>;
-  constructor( private wS: PhoneBookService) { }
+  constructor( private pS: PhoneBookService) { }
 
   ngOnInit() {
     this.loadAllPeople();
@@ -20,7 +24,7 @@ export class PhoneBookComponent implements OnInit {
 
 
   loadAllPeople() {
-    this.allPeople = this.wS.getAllPeople();
+    this.allPeople = this.pS.getAllPeople();
     
   }
 

@@ -1,18 +1,26 @@
-<table class="table" mat-table >
-  <tr ngclass="btn-primary">  
-    <th class="tbl2">Worker Name</th>  
-    <th class="tbl2">Worker Surname</th>  
-    <th class="tbl2">Age</th>  
-    <th class="tbl2">Salary</th>  
-    <th class="tbl2">Edit</th>  
-    <th class="tbl2">Delete</th>  
-  </tr>  
-  <tr *ngFor="let w of allPeople | async">  
-    <td class="tbl2">{{w.Name}}</td>   
-    <td class="tbl2">{{w.Surname}}</td>
-    <td class="tbl2">{{w.NickName}}</td>  
+ 
+
+
+
+
+<div *ngFor="let p of allPeople | async">
+<mat-card  class="example-card">
+    <mat-card-header>
+      <mat-card-title>{{p.Name}}</mat-card-title>
+      <mat-card-subtitle>{{p.Surname}}</mat-card-subtitle>
+    </mat-card-header>
+  <img height="400px" mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+    <mat-card-content>
+      <p>Phone: {{p.Phone}}</p>
+      <p>Birthday:{{p.Birthday}} </p>
+      <p>Status: {{p.Status}}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>LIKE</button>
+      <button mat-button>SHARE</button>
+    </mat-card-actions>
+  </mat-card>
+
+</div>
    
     
-  </tr>  
-
-</table>  

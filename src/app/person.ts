@@ -7,3 +7,4 @@ export class Person {
     public Birthday:Date;
     public Status:boolean;
 }
+
